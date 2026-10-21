@@ -29,37 +29,37 @@ body {
   background-attachment: fixed;
 }
 
-/* Glassmorphism & Athletic Cards */
-@utility glass-card {
+/* Glassmorphism & Athletic Classes */
+.glass-card {
   background-color: rgba(20, 17, 14, 0.75);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(234, 88, 12, 0.25);
   box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5);
 }
 
-@utility glass-card-hover {
+.glass-card-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@utility glass-card-hover:hover {
+.glass-card-hover:hover {
   border-color: rgba(249, 115, 22, 0.5);
   box-shadow: 0 12px 40px -4px rgba(234, 88, 12, 0.2);
   transform: translateY(-2px);
 }
 
-@utility glass-nav {
+.glass-nav {
   background-color: rgba(10, 8, 7, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(234, 88, 12, 0.15);
 }
 
-@utility athletic-btn {
+.athletic-btn {
   background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
   box-shadow: 0 4px 25px rgba(234, 88, 12, 0.45);
   transition: all 0.25s ease;
 }
 
-@utility athletic-btn:hover {
+.athletic-btn:hover {
   background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
   box-shadow: 0 6px 35px rgba(249, 115, 22, 0.65);
   transform: translateY(-2px);
