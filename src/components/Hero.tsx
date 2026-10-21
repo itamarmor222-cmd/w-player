@@ -15,18 +15,19 @@ export default function Hero() {
 
   return (
     <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 px-4 overflow-hidden">
-      {/* Real Basketball Arena Background with Stadium Lighting & Hardwood Court */}
+      {/* Dimmed Authentic Basketball Arena Photographic Background (Reference Style) */}
       <div className="absolute inset-0 -z-10 pointer-events-none select-none overflow-hidden">
         <Image
           src="/arena-bg.jpg"
           alt="Basketball Arena Atmosphere"
           fill
           priority
-          className="object-cover object-top opacity-55 mix-blend-screen scale-105"
+          className="object-cover object-center scale-100 brightness-[0.7] contrast-[1.1]"
         />
-        {/* Cinematic Vignette & Bottom Floor Blend */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080706]/75 via-[#080706]/45 to-[#080706]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,#080706_85%)]" />
+        {/* Dark Dimming Overlays - Exactly like the reference example */}
+        <div className="absolute inset-0 bg-black/60 md:bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-[#080706]" />
+        <div className="absolute inset-0 bg-radial from-transparent via-black/20 to-black/80" />
       </div>
 
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center relative z-10">
