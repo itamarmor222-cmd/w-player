@@ -4,8 +4,8 @@
   --color-primary-accent: #EA580C;
   --color-primary-dark: #C2410C;
   --color-secondary-glow: #F97316;
-  --color-main-bg: #090807;
-  --color-card-surface: #14110E;
+  --color-main-bg: #080706;
+  --color-card-surface: #120E0B;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #D4D4D8;
   
@@ -22,45 +22,86 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(234, 88, 12, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 10% 30%, rgba(194, 65, 12, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 70%, rgba(249, 115, 22, 0.06) 0%, transparent 50%);
+  position: relative;
+  
+  /* Dark Cinematic Basketball Arena: 
+     1. Parquet/Hardwood grain texture (ultra subtle, 2% opacity)
+     2. Overhead arena floodlight (warm diffused cone from above)
+     3. Ambient floor bounce (soft warmth rising from court level)
+     4. Natural perimeter vignette (deepening shadows at the edges)
+  */
+  background-image:
+    /* Arena Vignette */
+    radial-gradient(circle at 50% 50%, transparent 45%, rgba(4, 3, 2, 0.85) 100%),
+    /* Soft Overhead Arena Light */
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(234, 88, 12, 0.12) 0%, rgba(194, 65, 12, 0.03) 50%, transparent 80%),
+    /* Ambient Court Floor Bounce */
+    radial-gradient(ellipse 75% 35% at 50% 102%, rgba(234, 88, 12, 0.06) 0%, transparent 65%),
+    /* Subtle Hardwood Court Grain Grid (SVG Data URI) */
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v1H0zM0 40h80v1H0zM20 0v40h1V0zM60 40v40h1V40z' fill='%23ffffff' fill-opacity='0.015' fill-rule='evenodd'/%3E%3C/svg%3E");
   background-attachment: fixed;
 }
 
-/* Glassmorphism & Athletic Classes */
+/* Atmospheric Ambient Arena Breathing (Subtle light shift) */
+@keyframes arena-breathe {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.arena-glow-layer {
+  animation: arena-breathe 12s ease-in-out infinite alternate;
+}
+
+/* Cinematic Court Surfaces */
 .glass-card {
-  background-color: rgba(20, 17, 14, 0.75);
+  background-color: rgba(18, 14, 11, 0.72);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(234, 88, 12, 0.25);
-  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(234, 88, 12, 0.28);
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(249, 115, 22, 0.5);
-  box-shadow: 0 12px 40px -4px rgba(234, 88, 12, 0.2);
+  border-top-color: rgba(249, 115, 22, 0.55);
+  box-shadow: 
+    0 22px 50px -10px rgba(0, 0, 0, 0.95),
+    0 0 30px -5px rgba(234, 88, 12, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
 .glass-nav {
-  background-color: rgba(10, 8, 7, 0.85);
+  background-color: rgba(8, 7, 6, 0.88);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(234, 88, 12, 0.15);
 }
 
+/* Athletic Button with Rim Lighting */
 .athletic-btn {
   background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
-  box-shadow: 0 4px 25px rgba(234, 88, 12, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 8px 30px -4px rgba(234, 88, 12, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.4);
   transition: all 0.25s ease;
 }
 
 .athletic-btn:hover {
   background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  box-shadow: 0 6px 35px rgba(249, 115, 22, 0.65);
+  box-shadow: 
+    0 12px 35px -2px rgba(249, 115, 22, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
 }
