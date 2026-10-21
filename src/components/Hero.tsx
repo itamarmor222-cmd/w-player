@@ -14,19 +14,19 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 px-4 overflow-hidden">
+    <section className="relative isolate pt-8 pb-16 md:pt-14 md:pb-24 px-4 overflow-hidden">
       {/* Abstract Basketball Court Graphic - Warm Cream Maple & Charcoal Contrast */}
-      <div className="absolute inset-0 -z-10 pointer-events-none select-none overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
         <Image
           src="/court-contrast-bg.jpg"
           alt="Basketball Court Graphic"
           fill
           priority
-          className="object-cover object-center scale-100 opacity-60 contrast-[1.05]"
+          className="object-cover object-center scale-105 opacity-80"
         />
-        {/* Soft Contrast Gradients - Keeps Court Visible while Preserving Dark Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080706]/75 via-[#080706]/55 to-[#080706]" />
-        <div className="absolute inset-0 bg-radial from-transparent via-black/25 to-[#080706]/90" />
+        {/* Soft Dark Overlay - Keeps Warm Cream Wood & Court Lines Clearly Visible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-[#080706]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(8,7,6,0.65)_90%)]" />
       </div>
 
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center relative z-10">
