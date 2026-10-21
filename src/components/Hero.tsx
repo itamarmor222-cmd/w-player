@@ -3,6 +3,7 @@
 import { contentData, cohortConfig } from "@/data/contentData";
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const scrollToForm = () => {
@@ -14,30 +15,32 @@ export default function Hero() {
 
   return (
     <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 px-4 overflow-hidden">
-      {/* Subtle Half-Court Geometry in Background (Felt rather than seen) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[950px] md:h-[950px] pointer-events-none opacity-[0.04] -z-10">
-        <svg viewBox="0 0 800 800" className="w-full h-full stroke-white fill-none" strokeWidth="2">
-          {/* Half-court center circle */}
-          <circle cx="400" cy="400" r="180" />
-          <circle cx="400" cy="400" r="40" />
-          {/* Key / Free throw lane */}
-          <rect x="280" y="220" width="240" height="360" />
-          <path d="M 120 400 L 680 400" />
-        </svg>
+      {/* Real Basketball Arena Background with Stadium Lighting & Hardwood Court */}
+      <div className="absolute inset-0 -z-10 pointer-events-none select-none overflow-hidden">
+        <Image
+          src="/arena-bg.jpg"
+          alt="Basketball Arena Atmosphere"
+          fill
+          priority
+          className="object-cover object-top opacity-55 mix-blend-screen scale-105"
+        />
+        {/* Cinematic Vignette & Bottom Floor Blend */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080706]/75 via-[#080706]/45 to-[#080706]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,#080706_85%)]" />
       </div>
 
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center relative z-10">
         
-        {/* Brand Slogan Badge */}
+        {/* High-Contrast Cream & Burnt Orange Slogan Badge */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-accent/40 bg-gradient-to-r from-primary-accent/10 to-transparent text-secondary-glow font-black text-xs md:text-sm tracking-wider uppercase mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+          className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#FBF7EE] text-[#14100C] font-black text-xs md:text-sm tracking-wider uppercase mb-6 shadow-[0_6px_30px_rgba(251,247,238,0.22)] border border-[#EDE4D3]"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-secondary-glow animate-pulse" />
-          <span>{contentData.brand.slogan}</span>
-          <span className="text-white/30">•</span>
-          <span className="text-white/80 font-medium">פיתוח שחקנים ומעטפת ליווי</span>
+          <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
+          <span className="tracking-widest font-black text-[#C2410C]">{contentData.brand.slogan}</span>
+          <span className="text-stone-400">•</span>
+          <span className="text-stone-800 font-bold">מעטפת פיתוח שחקנים</span>
         </motion.div>
 
         {/* Punchy H1 Headline */}

@@ -30,7 +30,7 @@ export default function ProblemAgitation() {
               className="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl md:rounded-3xl border-t-4 border-t-primary-accent relative flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-primary-accent/15 border border-primary-accent/30 flex items-center justify-center mb-6 text-secondary-glow font-black text-xl">
+                <div className="w-12 h-12 rounded-2xl bg-[#FBF7EE] border border-amber-200/80 flex items-center justify-center mb-6 text-[#C2410C] font-black text-xl shadow-[0_4px_15px_rgba(251,247,238,0.15)]">
                   0{idx + 1}
                 </div>
                 <p className="text-base sm:text-lg text-text-primary/95 leading-relaxed font-medium">
