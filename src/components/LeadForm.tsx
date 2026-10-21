@@ -161,12 +161,12 @@ export default function LeadForm() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full bg-primary-accent hover:bg-secondary-glow text-white font-bold text-lg py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(194,65,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2 disabled:opacity-70"
+                  className="w-full athletic-btn text-white font-black text-lg py-4 rounded-2xl flex items-center justify-center gap-2 disabled:opacity-70 cursor-pointer active:scale-95"
                 >
                   {status === "loading" ? (
                     <Loader2 className="w-6 h-6 animate-spin" />
                   ) : (
-                    isWaitlist ? "הצטרפות לרשימת המתנה" : contentData.leadForm.submitText
+                    isWaitlist ? "הצטרפות לרשימת המתנה" : "שליחת פרטים לשיחת אבחון (ללא עלות) 👈"
                   )}
                 </button>
 

@@ -40,9 +40,9 @@ export default function Header() {
         
         <Link 
           href="/#lead-form"
-          className="bg-card-surface border border-primary-accent/30 hover:bg-primary-accent/10 transition-colors text-text-primary px-4 py-2 rounded-full text-sm font-bold"
+          className="athletic-btn text-white px-4 py-2 rounded-full text-xs sm:text-sm font-black tracking-wide"
         >
-          שיחת אבחון והתאמה
+          שיחת אבחון (חינם) 👈
         </Link>
       </div>
     </header>

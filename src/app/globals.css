@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary-accent: #C2410C;
-  --color-primary-dark: #A0300A;
-  --color-secondary-glow: #EA580C;
-  --color-main-bg: #0F0C0A;
-  --color-card-surface: #1C1612;
-  --color-text-primary: #FDFBF9;
-  --color-text-secondary: #A8A29E;
+  --color-primary-accent: #EA580C;
+  --color-primary-dark: #C2410C;
+  --color-secondary-glow: #F97316;
+  --color-main-bg: #090807;
+  --color-card-surface: #14110E;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D4D4D8;
   
   --font-sans: "Heebo", "Assistant", sans-serif;
 }
@@ -21,17 +21,46 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(234, 88, 12, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 10% 30%, rgba(194, 65, 12, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(249, 115, 22, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
-/* Glassmorphism utility classes */
+/* Glassmorphism & Athletic Cards */
 @utility glass-card {
-  background-color: rgba(28, 22, 18, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(194, 65, 12, 0.2);
+  background-color: rgba(20, 17, 14, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+}
+
+@utility glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility glass-card-hover:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 12px 40px -4px rgba(234, 88, 12, 0.2);
+  transform: translateY(-2px);
 }
 
 @utility glass-nav {
-  background-color: rgba(15, 12, 10, 0.8);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(194, 65, 12, 0.1);
+  background-color: rgba(10, 8, 7, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(234, 88, 12, 0.15);
+}
+
+@utility athletic-btn {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+  box-shadow: 0 4px 25px rgba(234, 88, 12, 0.45);
+  transition: all 0.25s ease;
+}
+
+@utility athletic-btn:hover {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  box-shadow: 0 6px 35px rgba(249, 115, 22, 0.65);
+  transform: translateY(-2px);
 }

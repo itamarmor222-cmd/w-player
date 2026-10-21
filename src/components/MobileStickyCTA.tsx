@@ -32,9 +32,10 @@ export default function MobileStickyCTA() {
         >
           <Link
             href="/#lead-form"
-            className="flex items-center justify-center w-full bg-primary-accent text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_30px_rgba(194,65,12,0.6)] border border-white/10"
+            className="flex items-center justify-center gap-2 w-full athletic-btn text-white font-black text-base sm:text-lg py-4 rounded-2xl shadow-[0_10px_35px_rgba(234,88,12,0.6)] border border-white/20"
           >
-            לשיחת אבחון והתאמה
+            <span>לשיחת אבחון והתאמה (ללא עלות)</span>
+            <span className="text-xl">👈</span>
           </Link>
         </motion.div>
       )}

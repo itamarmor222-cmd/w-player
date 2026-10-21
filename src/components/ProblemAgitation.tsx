@@ -26,15 +26,18 @@ export default function ProblemAgitation() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.15 }}
-              className="glass-card p-8 rounded-2xl border-t-4 border-t-primary-accent/50"
+              transition={{ delay: idx * 0.12 }}
+              className="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl md:rounded-3xl border-t-4 border-t-primary-accent relative flex flex-col justify-between"
             >
-              <div className="w-10 h-10 rounded-full bg-red-950/50 flex items-center justify-center mb-6 text-red-500">
-                <XCircle className="w-5 h-5" />
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-primary-accent/15 border border-primary-accent/30 flex items-center justify-center mb-6 text-secondary-glow font-black text-xl">
+                  0{idx + 1}
+                </div>
+                <p className="text-base sm:text-lg text-text-primary/95 leading-relaxed font-medium">
+                  {text}
+                </p>
               </div>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                {text}
-              </p>
+              <div className="w-full h-1 bg-gradient-to-r from-primary-accent/40 to-transparent mt-6 rounded-full" />
             </motion.div>
           ))}
         </div>
